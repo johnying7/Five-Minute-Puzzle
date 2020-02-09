@@ -4,30 +4,11 @@ Five Minute Puzzle Collaboration Game to learn the process for developing games.
 
 # Project Set Up
 
-## Git For Windows
-Download [Git for Windows](https://gitforwindows.org/).
+## Unity3D
 
-* Run the executable
-* Click ``Next`` -> ``Next`` to approve the license and default components
-* Use Visual Studio as Git's default editor
-* Git from the command line and also from 3rd-Party Software
-* Use the Open-SSL library
-* Checkout Windows-style, commit Unix-style line endings
-* Use MinTTY (the default terminal of MSYS2)
-* Make sure you're using these options:
-  * Enable file system caching
-  * Enable Git Credential Manager
-* Do **NOT** use experimental build
-* Click Install
-
-* Open File Explorer in the directory (example C:\Users\John) you want your project and then Right-Click -> Git Bash Here and type:
-  ```
-  $ git config --global user.name "Your name here"
-  $ git config --global user.email "your_email@example.com"
-  $ git clone https://github.com/johnying7/Five-Minute-Puzzle.git
-  ```
-
-Normally, to work with changes to the repository, you will need to login each time with your github credentials. You can use this SSH [guide](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to skip the process by saving your security key.
+```
+Unity Version: 2019.2.17f1
+```
 
 ## Visual Studio Code
 
@@ -48,11 +29,31 @@ Unity Tools - by Tobiah Zarlez
 
 You do **NOT** need to change file exclusions or download the .NET Framework 4.6 Targeting Pack.
 
-## Unity3D
+## Git For Windows
 
-```
-Unity Version: 2019.2.17f1
-```
+Download [Git for Windows](https://gitforwindows.org/).
+
+* Run the executable
+* Click ``Next`` -> ``Next`` to approve the license and default components
+* Use Visual Studio as Git's default editor (ensure you already have visual studio code installed first)
+* Git from the command line and also from 3rd-Party Software
+* Use the Open-SSL library
+* Checkout Windows-style, commit Unix-style line endings
+* Use MinTTY (the default terminal of MSYS2)
+* Make sure you're using these options:
+  * Enable file system caching
+  * Enable Git Credential Manager
+* Do **NOT** use experimental build
+* Click Install
+
+* Open File Explorer in the directory (example C:\Users\John) you want your project and then Right-Click -> Git Bash Here and type:
+  ```
+  $ git config --global user.name "Your name here"
+  $ git config --global user.email "your_email@example.com"
+  $ git clone https://github.com/johnying7/Five-Minute-Puzzle.git
+  ```
+
+Normally, to work with changes to the repository, you will need to login each time with your github credentials. You can use this SSH [guide](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to skip the process by saving your security key.
 
 ## Git LFS
 
