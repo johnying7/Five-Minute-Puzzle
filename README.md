@@ -20,13 +20,11 @@ Download [Git for Windows](https://gitforwindows.org/).
 * Do **NOT** use experimental build
 * Click Install
 
-After you go to the [Project Repository](https://github.com/johnying7/Five-Minute-Puzzle), click "Clone or download", download the zip and extract it.
-* Open file explorer at the project file location (example C:\Users\John\Five-Minute-Puzzle-Master\Five-Minute-Puzzle)
-* Open Git Bash in your project by using Right-Click -> Git Bash Here and type:
+* Open File Explorer in the directory (example C:\Users\John) you want your project and then Right-Click -> Git Bash Here and type:
   ```
   $ git config --global user.name "Your name here"
   $ git config --global user.email "your_email@example.com"
-  $ git remote add origin https://github.com/johnying7/Five-Minute-Puzzle.git
+  $ git clone https://github.com/johnying7/Five-Minute-Puzzle.git
   ```
 
 Normally, to work with changes to the repository, you will need to login each time with your github credentials. You can use this SSH [guide](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to skip the process by saving your security key.
