@@ -15,6 +15,8 @@ Unity Version: 2019.2.17f1
 The recommended text editor is Visual Studio Code found [here](https://code.visualstudio.com/).
 Go [here](https://code.visualstudio.com/docs/other/unity) attach VSCode with unity.
 
+For installation, the default settings or any personal preferences will work for the project.
+
 With VS Code open, Ctrl+Shift+G to open the source control tab and make sure that the repository has been attached, initialized, and connected to the github repository.
 
 For plug-in installation, in VSCode do Ctrl-Shift-X(Windows) or Cmd-Shift-X(MacOS)
@@ -34,6 +36,7 @@ You do **NOT** need to change file exclusions or download the .NET Framework 4.6
 Download [Git for Windows](https://gitforwindows.org/).
 
 * Run the executable
+* Uncheck "Only Show New Options" if it is available in Configuring the line endings section.
 * Click ``Next`` -> ``Next`` to approve the license and default components
 * Use Visual Studio as Git's default editor (ensure you already have visual studio code installed first)
 * Git from the command line and also from 3rd-Party Software
@@ -90,9 +93,33 @@ After installing
   git checkout master
   git pull origin master
   git checkout -b ISSUE-XX
+  ```
+* Begin making your changes to the project
+* You may commit your changes as many times as you want, but be sure to rebase later
+
+**Making a Pull Request**
+  
+* After making the changes to your branch, you need to commit (save them) locally using the Visual Studio Code Source Control tab (Ctrl+Shift+G)
+* Once on the tab, ``Stage All Changes`` and set the commit message in the format:
+  * ``Resolves #XX Issue Title``
+  * Example: ``Resolves #1 Initial Online Functionality``
+* Click the Commit checkmark
+* If you have made more than one new commit, do the next git steps, otherwise skip to git push step after Save and Close
+    ```
+    git checkout master
+    git pull origin master
+    git checkout ISSUE-XX
+    git rebase -i origin/master
+    ```
+  * Leave the first commit as ``pick``
+  * Set every commit after the first pick as ``squash``
+  * Save and Close
+  * Comment out the other commit messages except for the one required with a # before the commit message
+  * Save and Close
+  ```
   git push --set-upstream origin ISSUE-XX
   ```
-* Create a pull request to set to in-progress with the same title as the associated issue
+* Create a pull request to set to in-progress with the same title as the associated issue on the github website
 * In pull request details, include: ``Resolves #XX Issue Title``
 * Add correct associations on the right hand side
   * Assignees
@@ -104,17 +131,31 @@ After installing
 * Double check above associations are present
   * Add appropriate reviewers
   * Have reviewers verify your changes
-* checkout master -> ``git pull origin master``
-* Checkout local branch, Rebase and Squash commit to one with message in format of ``Resolves #XX Issue Title``
-  * ``git rebase -i origin/master``
-  * Example: ``Resolves #1 Initial Online Functionality``
-* Make sure there aren't any merge conflicts with master
-* ``git checkout master``
-* ``git merge ISSUE-XX``
-* ``git push origin master``
-* delete merged branch
+* Before being approved, ``git push`` your changes.
+* Make sure the pull request has been approved with all changes
+  ```
+  git checkout master
+  git pull origin master
+  git checkout ISSUE-XX
+  git rebase -i origin/master
+  ```
+* Leave the first commit as ``pick``
+* Set every commit after the first pick as ``squash``
+* Save and Close
+* Comment out the other commit messages except for the one required with a # before the commit message
+* Save and Close
+  ```
+  git push origin ISSUE-XX --force
+  git checkout master
+  git merge ISSUE-XX
+  git push origin master
+  git branch -d ISSUE-XX
+  ```
+* Go to the pull request in github and delete the branch
 
 ## Additional Git Notes
+
+Setting the upstream is only required once. Afterward, you may simply use ``git push``. If you rebase and need to apply your changes, use ``git push origin ISSUE-XX --force``.
 
 To open Git Bash in your project, you can open file explorer at the project file location (example C:\Users\John\Five-Minute-Puzzle), Right-Click -> Git Bash Here.
 
