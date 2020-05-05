@@ -16,7 +16,7 @@ public class FixedCamera : MonoBehaviour
         playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
-    // Update is called once per frame
+    // FixedUpdate is called several times per frame
     void FixedUpdate()
     {
         Vector3 cameraPosition = playerTransform.position;

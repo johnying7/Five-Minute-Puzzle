@@ -16,6 +16,7 @@ public class DoorController : MonoBehaviour
         if (coinsRequired <= 0) {
             Debug.LogError("Coins required must be greater than zero.");
         }
+        GameObject.FindWithTag("CoinManager").GetComponent<CoinManager>().addDoorController(this);
         doorHinge = this.transform.GetChild(0);
         string requiredAmountSign = "Required: " + coinsRequired.ToString();
         requiredDoorText.text = requiredAmountSign;
